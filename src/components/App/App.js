@@ -5,21 +5,21 @@ import styles from "./App.module.css";
 import NavBar from '../Navbar/NavBar';
 
 // Redux
-import { useSelector, useDispatch } from "react-redux";
-import { makeExpense } from '../../redux/actions/expense/actions';
+// import { useSelector, useDispatch } from "react-redux";
+// import { makeExpense } from '../../redux/actions/expense/actions';
 
 const App = () => {
 
-  const dispatch = useDispatch();
-  const expenses = useSelector(state => state.expenses.expenses);
+  // const dispatch = useDispatch();
+  // const expenses = useSelector(state => state.expenses.expenses);
 
 
-  const clickHandler = () => {
-    // dispatch(makeExpense({
-    //   title: "New Expense",
-    //   amount: Math.random()
-    // }))
-  }
+  // const clickHandler = () => {
+  //   dispatch(makeExpense({
+  //     title: "New Expense",
+  //     amount: Math.random()
+  //   }))
+  // }
 
   return (
       <div className={styles.container}>
