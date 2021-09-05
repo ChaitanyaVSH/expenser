@@ -1,5 +1,10 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button'
+import styles from "./App.module.css";
+
+// UI Components
+import NavBar from '../Navbar/NavBar';
+
+// Redux
 import { useSelector, useDispatch } from "react-redux";
 import { makeExpense } from '../../redux/actions/expense/actions';
 
@@ -17,10 +22,9 @@ const App = () => {
   }
 
   return (
-      <div>
+      <div className={styles.container}>
+        <NavBar/>
         <h1>Welcome to Expenses Management</h1>
-        <Button variant="outline-primary">Primary</Button>{' '}
-        <Button variant="outline-secondary">Secondary</Button>{' '}
       </div>
   )
 }
