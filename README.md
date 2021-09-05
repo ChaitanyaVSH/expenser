@@ -1,6 +1,6 @@
 <h1>Expenser</h1>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Emblem-money.svg/1024px-Emblem-money.svg.png" width="250px" height="10px">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Emblem-money.svg/1024px-Emblem-money.svg.png" width="250px" height="250px">
 
 <h2 style="color: #FFB344; border-bottom: 1px solid lightblue">A Personal Finance Management application</h2>
 <p>This application helps you easily track all your expenses at one place. Provides the below functionalities.</p>
