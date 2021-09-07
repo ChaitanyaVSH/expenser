@@ -1,0 +1,14 @@
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container img {
+    width: 75%;
+}
