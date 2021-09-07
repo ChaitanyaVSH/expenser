@@ -4,15 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from "react-redux";
 import store from './redux/store';
 import './index.css';
-import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
+import routes from './routes';
+import { BrowserRouter as Router } from 'react-router-dom';
+import NavBar from './components/Navbar/NavBar';
 
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>,
+  <Router>
+    <Provider store={store}>
+      <React.StrictMode>
+        <NavBar/>
+        {routes}
+      </React.StrictMode>
+    </Provider>
+  </Router>,
   document.getElementById('root')
 );
 

@@ -2,7 +2,6 @@ import React from 'react';
 import styles from "./App.module.css";
 
 // UI Components
-import NavBar from '../Navbar/NavBar';
 import ShowCase from '../ShowCase/ShowCase';
 
 // Redux
@@ -24,7 +23,6 @@ const App = () => {
 
   return (
     <div>
-      <NavBar/>
       <div className={styles.showcase}>
         <ShowCase/>
       </div>
