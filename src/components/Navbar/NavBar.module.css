@@ -1,0 +1,16 @@
+.NavigationItem {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+.NavigationItem:hover,
+.NavigationItem:active {
+    color: #40a4c8;
+}
+
+.activeStyles {
+    border-bottom: 1px solid #40a4c8;
+}

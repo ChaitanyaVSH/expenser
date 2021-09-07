@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from "./NotFound.module.css";
+
+// Assets
 import notFoundLogo from "../../images/notFound.svg";
 
 const NotFound = () => {
