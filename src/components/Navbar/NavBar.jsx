@@ -11,7 +11,9 @@ import Nav from 'react-bootstrap/Nav';
 
 const NavBar = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{
+            textAlign: "right"
+        }}>
             <Container>
                 {/* Logo */}
                 <Navbar.Brand>
@@ -25,13 +27,13 @@ const NavBar = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
                         <Nav.Link>
-                            Track now
+                            <h4>Track now</h4>
                         </Nav.Link>
                         <Nav.Link>
-                            About
+                            <h4>About</h4>
                         </Nav.Link>
                         <Nav.Link>
-                            Contact
+                            <h4>Contact</h4>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

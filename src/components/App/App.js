@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 
 // UI Components
 import NavBar from '../Navbar/NavBar';
+import ShowCase from '../ShowCase/ShowCase';
 
 // Redux
 // import { useSelector, useDispatch } from "react-redux";
@@ -22,10 +23,12 @@ const App = () => {
   // }
 
   return (
-      <div className={styles.container}>
-        <NavBar/>
-        <h1>Welcome to Expenses Management</h1>
+    <div>
+      <NavBar/>
+      <div className={styles.showcase}>
+        <ShowCase/>
       </div>
+    </div>
   )
 }
 

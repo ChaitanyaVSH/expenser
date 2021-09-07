@@ -1,0 +1,22 @@
+.container {
+    padding: 18px;
+    text-align: center;
+}
+
+/* Utilities */
+.flex {
+    justify-content: center;
+    align-items: center;
+}
+
+@media(min-width: 767px){
+    .alignLeft {
+        text-align: left;
+    }
+}
+
+@media(max-width: 1350px){
+    img{
+        width:75%
+    }
+}
