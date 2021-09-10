@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./Tracking.module.css";
 
 // UI Components
@@ -14,19 +14,33 @@ import FormGroupWrapper from "../Commons/FormGroupWrapper";
  * @returns JSX
  */
 const Tracking = () => {
+    const [validated, setValidated] = useState(false);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        setValidated(true);
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.trackIncome}>
                 <h4>Add Your income</h4>
                 <p>The income provided here will be added to your overall income for this month.</p>
                 <div className={styles.incomeForm}>
-                <Form>
+                <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Col md={6} lg={5}>
                         <FormGroupWrapper
                         label="Income name"
                         placeholder="Enter the name for your income"
                         type="text"
                         controlId="incomeName"
+                        feedback="Looks good"
                         />
                     </Col>
                     <Col md={6} lg={5}>
@@ -35,6 +49,7 @@ const Tracking = () => {
                         placeholder="Enter the amount for your income"
                         type="number"
                         controlId="incomeAmount"
+                        feedback="Looks good"
                         />
                     </Col>
                     <Button size="lg" variant="primary" type="submit">Submit</Button>

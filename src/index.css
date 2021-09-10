@@ -13,7 +13,7 @@ body {
   font-family: Poppins, sans-serif;
 }
 
-h1,h2,h4{
+h1,h2,h4 {
   margin: 6px;
   padding: 6px;
 }
@@ -29,6 +29,10 @@ h1{
 
 h2{
   font-size: clamp(1rem, 5.5vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(0.9rem, 5.5vw, 1.5rem);
 }
 
 p {
