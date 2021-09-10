@@ -33,7 +33,7 @@ const NavBar = () => {
                 {/* Responsive element to get toggled */}
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
-                        <Nav.Link>
+                        <Nav.Link eventKey="1">
                             <NavLink
                                 to="/track"
                                 activeClassName={styles.activeStyles}
@@ -41,14 +41,14 @@ const NavBar = () => {
                             ><h4>Track now</h4>
                             </NavLink>
                         </Nav.Link>
-                        <Nav.Link>
+                        <Nav.Link eventKey="2">
                             <NavLink
                                 to="/about"
                                 activeClassName={styles.activeStyles}
                                 className={styles.NavigationItem}
                             ><h4>About</h4></NavLink>
                         </Nav.Link>
-                        <Nav.Link>
+                        <Nav.Link eventKey="3">
                             <NavLink
                                 to="/contact"
                                 activeClassName={styles.activeStyles}
@@ -63,3 +63,5 @@ const NavBar = () => {
 }
 
 export default NavBar;
+
+// CollapseOnSelect to work: https://stackoverflow.com/a/56485081/11399514
