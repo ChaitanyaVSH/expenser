@@ -13,7 +13,12 @@ body {
   font-family: Poppins, sans-serif;
 }
 
-h1,h2,h4,p {
+h1,h2,h4{
+  margin: 6px;
+  padding: 6px;
+}
+
+p {
   margin: 6px;
   padding: 6px;
 }

@@ -2,11 +2,13 @@ import { Route, Switch } from "react-router-dom";
 import About from "./components/About/About";
 import App from "./components/App/App";
 import NotFound from "./components/NotFound/NotFound";
+import Tracking from "./components/Tracking/Tracking";
 
 // Variable
 const routes = (
     <Switch>
         <Route exact path="/about" component={About}/>
+        <Route exact path="/track" component={Tracking}/>
         <Route exact path="/" component={App}/>
         <Route path="*" component={NotFound} />
     </Switch>

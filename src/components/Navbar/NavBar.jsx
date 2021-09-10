@@ -35,7 +35,7 @@ const NavBar = () => {
                     <Nav className="ms-auto">
                         <Nav.Link>
                             <NavLink
-                                to="/explore"
+                                to="/track"
                                 activeClassName={styles.activeStyles}
                                 className={styles.NavigationItem}
                             ><h4>Track now</h4>

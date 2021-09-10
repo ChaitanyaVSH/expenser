@@ -1,0 +1,21 @@
+.container {
+    max-width: 900px;
+    margin: auto;
+    margin-top: 15px;
+    padding: 8px;
+    border: 1px solid lightgray;
+}
+
+.trackIncome {
+
+}
+
+.incomeForm {
+    margin: 8px;
+    padding: 8px;
+    border: 1px solid lightgray;
+}
+
+.trackExpense {
+
+}
