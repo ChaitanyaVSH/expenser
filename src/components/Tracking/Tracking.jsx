@@ -5,6 +5,7 @@ import styles from "./Tracking.module.css";
 import Button from "react-bootstrap/Button";
 import Col from 'react-bootstrap/esm/Col';
 import Form from 'react-bootstrap/Form';
+import { toast } from 'react-toastify';
 
 // Custom UI Components
 import FormGroupWrapper from "../Commons/FormGroupWrapper";
@@ -25,6 +26,7 @@ const Tracking = () => {
             event.stopPropagation();
         }
         setValidated(true);
+        toast.success("Wow so easy!");
     };
 
     return (
