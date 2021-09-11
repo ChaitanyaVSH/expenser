@@ -2,8 +2,12 @@ import { createStore, applyMiddleware } from "redux";
 import logger from "redux-logger";
 import rootReducer from "./reducers/rootreducer";
 
-const middlewares = applyMiddleware(logger);
+let middleWares = null;
 
-const store = createStore(rootReducer, middlewares);
+if( !process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+    middleWares = applyMiddleware(logger);
+}
+
+const store = createStore(rootReducer, middleWares);
 
 export default store;
