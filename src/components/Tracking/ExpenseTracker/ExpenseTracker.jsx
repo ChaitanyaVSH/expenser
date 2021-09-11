@@ -16,7 +16,25 @@ import FormGroupWrapper from "../../Commons/FormGroupWrapper";
  */
 const ExpenseTracker = () => {
 
+    // State to store the currently added values
+    const [state, setState] = useState({
+        expenseName: "",
+        expenseAmount: 0
+    });
+
+    // Form validation variables
     const [validated, setValidated] = useState(false);
+
+    /**
+     * This handler is needed for the FormWrapper to update the state in the current component.
+     * @param {0} event, target on which the FormControlWrapper is embedded
+     */
+     const handleChange = (event) => {
+        setState({
+            ...state,
+            [event.target.name]: event.target.value
+        });
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -30,6 +48,7 @@ const ExpenseTracker = () => {
             return
         }
         setValidated(true);
+        console.log("State: ", state);
     };
 
     return (
@@ -40,20 +59,24 @@ const ExpenseTracker = () => {
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Col md={6} lg={5}>
                         <FormGroupWrapper
+                        name="expenseName"
                         label="Expense name"
                         placeholder="Enter the name for your expense"
                         type="text"
                         controlId="expenseName"
                         feedback="Looks good"
+                        onChange={handleChange}
                         />
                     </Col>
                     <Col md={6} lg={5}>
                         <FormGroupWrapper
+                        name="expenseAmount"
                         label="Expense amount"
                         placeholder="Enter the amount for your expense"
                         type="number"
                         controlId="expenseAmount"
                         feedback="Looks good"
+                        onChange={handleChange}
                         />
                     </Col>
                     <Button variant="primary" type="submit">Submit</Button>

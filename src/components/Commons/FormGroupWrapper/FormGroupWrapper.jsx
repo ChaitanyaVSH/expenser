@@ -9,10 +9,26 @@ import Form from 'react-bootstrap/Form';
  * @returns Form.Group
  */
 const FormGroupWrapper = (props) => {
+
+    // Bubbles up the onChange event to the handler passed in the props
+    const changeHandler = (event) => {
+        props.onChange(event)
+    }
+
     return (
         <Form.Group className="mb-3" controlId={props.controlId}>
             <Form.Label>{props.label}</Form.Label>
-            {props.type ? <Form.Control type={props.type} placeholder={props.placeholder} required/> : null}
+            {
+            props.type ?
+                <Form.Control
+                    required
+                    name={props.name}
+                    type={props.type}
+                    placeholder={props.placeholder}
+                    onChange={changeHandler}
+                />
+            :null
+            }
             <Form.Control.Feedback>{props.feedback}</Form.Control.Feedback>
         </Form.Group>
     )
