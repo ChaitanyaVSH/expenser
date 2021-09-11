@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from "./IncomeTracker.module.css";
+import styles from "./ExpenseTracker.module.css";
 
 // UI Components
 import Button from "react-bootstrap/Button";
@@ -11,10 +11,10 @@ import { toast } from 'react-toastify';
 import FormGroupWrapper from "../../Commons/FormGroupWrapper";
 
 /**
- * This component helps the user to add an Income.
+ * This component helps the user to add an Expense.
  * @returns JSX
  */
-const IncomeTracker = () => {
+const ExpenseTracker = () => {
 
     const [validated, setValidated] = useState(false);
 
@@ -34,25 +34,25 @@ const IncomeTracker = () => {
 
     return (
         <div>
-            <h4>Add Your income</h4>
-            <p>The income provided here will be added to your overall income for this month.</p>
-            <div className={styles.incomeForm}>
+            <h4>Add Your expense</h4>
+            <p>The expense provided here will be added to your overall expense for this month.</p>
+            <div className={styles.expenseForm}>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Col md={6} lg={5}>
                         <FormGroupWrapper
-                        label="Income name"
-                        placeholder="Enter the name for your income"
+                        label="Expense name"
+                        placeholder="Enter the name for your expense"
                         type="text"
-                        controlId="incomeName"
+                        controlId="expenseName"
                         feedback="Looks good"
                         />
                     </Col>
                     <Col md={6} lg={5}>
                         <FormGroupWrapper
-                        label="Income amount"
-                        placeholder="Enter the amount for your income"
+                        label="Expense amount"
+                        placeholder="Enter the amount for your expense"
                         type="number"
-                        controlId="incomeAmount"
+                        controlId="expenseAmount"
                         feedback="Looks good"
                         />
                     </Col>
@@ -63,4 +63,4 @@ const IncomeTracker = () => {
     )
 }
 
-export default IncomeTracker;
+export default ExpenseTracker;
