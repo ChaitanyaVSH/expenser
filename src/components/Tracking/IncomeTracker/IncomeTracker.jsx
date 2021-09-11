@@ -13,7 +13,7 @@ import { toast } from 'react-toastify';
 
 // Custom UI Components
 import FormGroupWrapper from "../../Commons/FormGroupWrapper";
-import FormSelectWrapper from '../../Commons/FormSelectWrapper/FormSelectWrapper';
+import FormSelectWrapper from '../../Commons/FormSelectWrapper';
 
 /**
  * This component helps the user to add an Income.
