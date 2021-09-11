@@ -13,6 +13,7 @@ import { toast } from 'react-toastify';
 
 // Custom UI Components
 import FormGroupWrapper from "../../Commons/FormGroupWrapper";
+import FormSelectWrapper from '../../Commons/FormSelectWrapper/FormSelectWrapper';
 
 /**
  * This component helps the user to add an Income.
@@ -26,7 +27,8 @@ const IncomeTracker = () => {
     // State to store the currently added values
     const [state, setState] = useState({
         incomeName: "",
-        incomeAmount: 0
+        incomeAmount: 0,
+        incomeType: null
     });
 
     // Form validation variables
@@ -90,6 +92,9 @@ const IncomeTracker = () => {
                         feedback="Looks good"
                         onChange={handleChange}
                         />
+                    </Col>
+                    <Col md={6} lg={5}>
+                        <FormSelectWrapper label="Income type" options={[]}/>
                     </Col>
                     <Button variant="primary" type="submit">Submit</Button>
                 </Form>
