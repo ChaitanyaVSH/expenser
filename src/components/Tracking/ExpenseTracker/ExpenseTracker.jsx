@@ -48,7 +48,6 @@ const ExpenseTracker = () => {
             return
         }
         setValidated(true);
-        console.log("State: ", state);
     };
 
     return (

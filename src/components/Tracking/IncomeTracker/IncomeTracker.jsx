@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import styles from "./IncomeTracker.module.css";
 
+// Redux
+import { useDispatch } from "react-redux";
+import { makeIncome } from '../../../redux/actions/income/actions';
+
 // UI Components
 import Button from "react-bootstrap/Button";
 import Col from 'react-bootstrap/esm/Col';
@@ -15,6 +19,9 @@ import FormGroupWrapper from "../../Commons/FormGroupWrapper";
  * @returns JSX
  */
 const IncomeTracker = () => {
+
+    // Hooks
+    const dispatch = useDispatch();
 
     // State to store the currently added values
     const [state, setState] = useState({
@@ -48,7 +55,12 @@ const IncomeTracker = () => {
             return
         }
         setValidated(true);
-        console.log("State: ", state);
+
+        dispatch(makeIncome({
+            title: state.incomeName,
+            amount: parseInt(state.incomeAmount)
+        }));
+        toast.success("Hurray! Added the income");
     };
 
     return (
