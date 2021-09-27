@@ -28,8 +28,8 @@ const IncomeTracker = () => {
     // State to store the currently added values
     const [state, setState] = useState({
         incomeName: "",
-        incomeAmount: 0,
-        incomeType: null
+        incomeAmount: "",
+        incomeType: ""
     });
 
     // Form validation variables
@@ -46,6 +46,23 @@ const IncomeTracker = () => {
         });
     }
 
+    /**
+     * Helper method to clear the input fields when the user clicks on Submit button.
+     */
+    const clearPage = () => {
+        setState({
+            incomeName: "",
+            incomeAmount: "",
+            incomeType: ""
+        });
+        setValidated(false);
+    }
+
+    /**
+     * Submit handler to update the state and the validations
+     * @param {0} event, input field on which the event has occurred.
+     * @returns none
+     */
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -64,6 +81,7 @@ const IncomeTracker = () => {
             amount: parseInt(state.incomeAmount)
         }));
         toast.success("Hurray! Added the income");
+        clearPage();
     };
 
     return (
@@ -76,6 +94,7 @@ const IncomeTracker = () => {
                         <FormGroupWrapper
                         name="incomeName"
                         label="Income name"
+                        value={state.incomeName}
                         placeholder="Enter the name for your income"
                         type="text"
                         controlId="incomeName"
@@ -87,6 +106,7 @@ const IncomeTracker = () => {
                         <FormGroupWrapper
                         name="incomeAmount"
                         label="Income amount"
+                        value={state.incomeAmount}
                         placeholder="Enter the amount for your income"
                         type="number"
                         controlId="incomeAmount"

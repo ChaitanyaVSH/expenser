@@ -26,6 +26,7 @@ const FormGroupWrapper = (props) => {
                     type={props.type}
                     placeholder={props.placeholder}
                     onChange={changeHandler}
+                    value={props.value}
                 />
             :null
             }
