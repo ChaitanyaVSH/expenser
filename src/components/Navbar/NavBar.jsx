@@ -50,10 +50,10 @@ const NavBar = () => {
                         </Nav.Link>
                         <Nav.Link eventKey="3">
                             <NavLink
-                                to="/contact"
+                                to="/profile"
                                 activeClassName={styles.activeStyles}
                                 className={styles.NavigationItem}
-                            ><h4>Contact</h4></NavLink>
+                            ><h4>Profile</h4></NavLink>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
