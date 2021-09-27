@@ -14,6 +14,7 @@ import { toast } from 'react-toastify';
 // Custom UI Components
 import FormGroupWrapper from "../../Commons/FormGroupWrapper";
 import FormSelectWrapper from '../../Commons/FormSelectWrapper';
+import incomeEnum from './incomeTypes';
 
 /**
  * This component helps the user to add an Income.
@@ -94,7 +95,12 @@ const IncomeTracker = () => {
                         />
                     </Col>
                     <Col md={6} lg={5}>
-                        <FormSelectWrapper label="Income type" options={[]}/>
+                        <FormSelectWrapper
+                        name="incomeType"
+                        label="Income type"
+                        options={Object.keys(incomeEnum)}
+                        onChange={handleChange}
+                        />
                     </Col>
                     <Button variant="primary" type="submit">Submit</Button>
                 </Form>

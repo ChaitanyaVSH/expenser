@@ -15,8 +15,13 @@ const FormSelectWrapper = (props) => {
     // Helper method to create option tag for each Form.Select option
     const getOptions = () => {
         return options.map((option, idx) => {
-            return <option key={idx} value={option.value}>{option.label}</option>
+            return <option key={idx} value={option}>{option}</option>
         })
+    }
+
+    // Bubbles up the onChange event to the handler passed in the props
+    const changeHandler = (event) => {
+        props.onChange(event)
     }
 
     // Helper method to validate the rendering logic for Form.Select
@@ -26,7 +31,11 @@ const FormSelectWrapper = (props) => {
         return (
             <div>
                 <Form.Label>{props.label}</Form.Label>
-                <Form.Select className="mb-3">
+                <Form.Select
+                    name={props.name}
+                    className="mb-3"
+                    onChange={changeHandler}
+                >
                     {getOptions()}
                 </Form.Select>
             </div>
