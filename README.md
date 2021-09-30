@@ -24,3 +24,11 @@
 <a href="https://github.com/ChaitanyaVSH/expenser"><p style="color: blue">Github</p></a>
 <a href="https://vercel.com/expenser/expenser"><p style="color: blue">Vercel || Expenser team</p></a>
 <a href="https://expenser-kappa.vercel.app/"><p style="color: blue">Live site: https://expenser-kappa.vercel.app/</p></a>
+
+<h3>Useful Docs and References</h3>
+<a href="https://stackoverflow.com/questions/58065603/netlify-renders-404-on-page-refresh-using-react-and-react-router"><p style="color: blue">Netlify redirect issue</p></a>
+
+<a href="https://docs.netlify.com/routing/redirects/"><p style="color: blue">Netlify redirect documentation</p></a>
+
+
+
