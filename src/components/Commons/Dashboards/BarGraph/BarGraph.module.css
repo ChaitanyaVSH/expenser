@@ -1,0 +1,16 @@
+.graphs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 850px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+ 
+canvas {
+    max-width: 400px;
+    max-height: 250px;
+    margin: 5px;
+    padding: 5px;
+}
