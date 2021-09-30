@@ -12,17 +12,13 @@ import Tabs from 'react-bootstrap/Tabs';
 const Profile = () => {
     return (
         <div className={styles.container}>
-            <Tabs id="controlled-tab-example" transition={false}>
-                <Tab eventKey="home" title="Home">
+            <Tabs id="controlled-tab-example" fill justify transition={true}>
+                <Tab eventKey="incomes" title="Incomes">
                     <h1>T1</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt debitis harum reprehenderit, commodi consectetur excepturi!</p>
                 </Tab>
-                <Tab eventKey="profile" title="Profile">
+                <Tab eventKey="expenses" title="Expenses">
                     <h1>T2</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt debitis harum reprehenderit, commodi consectetur excepturi!</p>
-                </Tab>
-                <Tab eventKey="contact" title="Contact">
-                    <h1>T3</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt debitis harum reprehenderit, commodi consectetur excepturi!</p>
                 </Tab>
             </Tabs>
