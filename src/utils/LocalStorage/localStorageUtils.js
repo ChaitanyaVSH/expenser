@@ -17,14 +17,8 @@ export const getItem = (key, parse = false) => {
  */
 export const setItem = (key, value, stringify = false) => {
     try {
-        if (stringify) {
-            localStorage.setItem(key, JSON.stringify(value));
-            return true;
-        }
-        else {
-            localStorage.setItem(key, value);
-            return true;
-        }
+        localStorage.setItem(key, stringify ? JSON.stringify(value) : value);
+        return true;
     } catch (error) {
         console.error(error);
         return false
