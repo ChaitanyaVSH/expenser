@@ -29,7 +29,8 @@ const IncomeTracker = () => {
     const [state, setState] = useState({
         incomeName: "",
         incomeAmount: "",
-        incomeType: ""
+        incomeType: "",
+        incomeDate: ""
     });
 
     // Form validation variables
@@ -53,7 +54,8 @@ const IncomeTracker = () => {
         setState({
             incomeName: "",
             incomeAmount: "",
-            incomeType: ""
+            incomeType: "",
+            incomeDate: ""
         });
         setValidated(false);
     }
@@ -119,6 +121,18 @@ const IncomeTracker = () => {
                         name="incomeType"
                         label="Income type"
                         options={Object.keys(incomeEnum)}
+                        onChange={handleChange}
+                        />
+                    </Col>
+                    <Col md={6} lg={5}>
+                        <FormGroupWrapper
+                        name="incomeDate"
+                        label="Income date"
+                        value={state.incomeDate}
+                        placeholder="Enter the date for your income"
+                        type="date"
+                        controlId="incomeDate"
+                        feedback="Looks good"
                         onChange={handleChange}
                         />
                     </Col>
