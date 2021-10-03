@@ -1,3 +1,4 @@
+import incomeEnum from "../../../components/Tracking/IncomeTracker/incomeTypes";
 import { MAKE_INCOME } from "../../actions/types";
 
 // Initial state for the application
@@ -5,7 +6,8 @@ const defaultState = {
     totalPortfolioValue: 1000,
     incomes: [{
         title: "Salary of August",
-        amount: 112318000
+        amount: 112318000,
+        type: incomeEnum.SALARY,
     }],
 };
 

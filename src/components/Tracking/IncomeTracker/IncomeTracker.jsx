@@ -29,7 +29,7 @@ const IncomeTracker = () => {
     const [state, setState] = useState({
         incomeName: "",
         incomeAmount: "",
-        incomeType: "",
+        incomeType: incomeEnum.SALARY,
         incomeDate: ""
     });
 
@@ -80,7 +80,9 @@ const IncomeTracker = () => {
 
         dispatch(makeIncome({
             title: state.incomeName,
-            amount: parseInt(state.incomeAmount)
+            amount: parseInt(state.incomeAmount),
+            type: state.incomeType,
+            date: state.incomeDate
         }));
         toast.success("Hurray! Added the income");
         clearPage();
