@@ -4,7 +4,7 @@ import rootReducer from "./reducers/rootreducer";
 
 let middleWares = [];
 
-if( !process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+if( !process.env.NODE_ENV && process.env.NODE_ENV === 'development') {
     middleWares = applyMiddleware(logger);
 }
 

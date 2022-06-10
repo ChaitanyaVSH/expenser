@@ -29,12 +29,12 @@ const IncomeTracker = () => {
     const [state, setState] = useState({
         incomeName: "",
         incomeAmount: "",
-        incomeType: incomeEnum.SALARY,
+        incomeType: null,
         incomeDate: ""
     });
 
-    // Form validation variables
-    const [validated, setValidated] = useState(false);
+    // Form feedback variables
+    const [showFeedback, setShowFeedback] = useState(false);
 
     /**
      * This handler is needed for the FormWrapper to update the state in the current component.
@@ -54,10 +54,10 @@ const IncomeTracker = () => {
         setState({
             incomeName: "",
             incomeAmount: "",
-            incomeType: "",
+            incomeType: null,
             incomeDate: ""
         });
-        setValidated(false);
+        setShowFeedback(false);
     }
 
     /**
@@ -72,11 +72,10 @@ const IncomeTracker = () => {
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
-            setValidated(true);
+            setShowFeedback(true);
             toast.error("Fix the validations!");
             return
         }
-        setValidated(true);
 
         dispatch(makeIncome({
             title: state.incomeName,
@@ -93,7 +92,7 @@ const IncomeTracker = () => {
             <h4>Add Your income</h4>
             <p>The income provided here will be added to your overall income for this month.</p>
             <div className={styles.incomeForm}>
-                <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                <Form noValidate validated={showFeedback} onSubmit={handleSubmit}>
                     <Col md={6} lg={5}>
                         <FormGroupWrapper
                         name="incomeName"
