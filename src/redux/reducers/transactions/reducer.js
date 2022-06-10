@@ -1,12 +1,23 @@
+import { MAKE_INCOME } from "../../actions/types";
 import { MAKE_EXPENSE } from "../../actions/types";
 
 // Initial state for the application
 const defaultState = {
-    totalPortfolioValue: 1000,
-    expenses: [{
-        title: "Dinner at Food plaza",
-        amount: 280
-    }],
+    expenses: [],
+    incomes: []
+};
+
+/**
+ * Reducer to update the state with the new income
+ * @param {0} state, current state of the application
+ * @param {*} income, new income object
+ * @returns updated state
+ */
+ const updateIncomes = (state, income) => {
+    return {
+        ...state,
+        incomes: [...state.incomes, income]
+    }
 };
 
 /**
@@ -28,8 +39,10 @@ const updateExpenses = (state, expense) => {
  * @param {*} action, currently dispatched action
  * @returns Handler to the redux store for expenses
  */
-const expenseReducer = (state = defaultState, action) => {
+const transactionReducer = (state = defaultState, action) => {
     switch (action.type) {
+        case MAKE_INCOME:
+            return updateIncomes(state, action.payload);
         case MAKE_EXPENSE:
             return updateExpenses(state, action.payload);
         default:
@@ -37,4 +50,4 @@ const expenseReducer = (state = defaultState, action) => {
     }
 };
 
-export default expenseReducer;
+export default transactionReducer;

@@ -14,9 +14,14 @@ const FormSelectWrapper = (props) => {
 
     // Helper method to create option tag for each Form.Select option
     const getOptions = () => {
-        return options.map((option, idx) => {
-            return <option key={idx} value={option}>{option}</option>
-        })
+        let _options = [
+            <option key={0}>Choose</option>
+        ]
+        options.forEach((option, idx) => {
+            _options.push(<option key={idx+1} value={option}>{option}</option>)
+        });
+
+        return _options;
     }
 
     // Bubbles up the onChange event to the handler passed in the props

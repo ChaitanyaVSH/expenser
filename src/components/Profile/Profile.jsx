@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from "./Profile.module.css";
 
+// Redux
+import { useSelector } from "react-redux";
+
 // UI Components
 import Tab from "react-bootstrap/Tab";
 import Tabs from 'react-bootstrap/Tabs';
@@ -11,6 +14,10 @@ import BarGraph from '../Commons/Dashboards/BarGraph/BarGraph';
  * @returns JSX
  */
 const Profile = () => {
+    
+    const state = useSelector((state) => state.transactions)
+    console.log("state", state);
+
     return (
         <div className={styles.container}>
             <Tabs id="controlled-tab-example" fill justify transition={true}>

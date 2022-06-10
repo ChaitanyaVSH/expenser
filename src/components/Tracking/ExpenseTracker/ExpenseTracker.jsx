@@ -9,45 +9,65 @@ import { toast } from 'react-toastify';
 
 // Custom UI Components
 import FormGroupWrapper from "../../Commons/FormGroupWrapper";
+import FormSelectWrapper from '../../Commons/FormSelectWrapper';
+import expenseEnum from "./expenseTypes";
 
 /**
  * This component helps the user to add an Expense.
  * @returns JSX
  */
-const ExpenseTracker = () => {
+const ExpenseTracker = ({
+    transactionType,
+    handleSubmit
+}) => {
 
     // State to store the currently added values
     const [state, setState] = useState({
         expenseName: "",
-        expenseAmount: 0
+        expenseAmount: 0,
+        expenseType: null,
+        expenseDesc: "",
+        expenseDate: ""
     });
 
     // Form validation variables
-    const [validated, setValidated] = useState(false);
+    const [showFeedback, setShowFeedback] = useState(false);
+
+    /**
+     * Helper method to clear the input fields when the user clicks on Submit button.
+     */
+     const _clearPage = () => {
+        setState({
+            expenseName: "",
+            expenseAmount: 0,
+            expenseType: null,
+            expenseDesc: "",
+            expenseDate: ""
+        });
+    }
 
     /**
      * This handler is needed for the FormWrapper to update the state in the current component.
      * @param {0} event, target on which the FormControlWrapper is embedded
      */
-     const handleChange = (event) => {
+     const _handleChange = (event) => {
         setState({
             ...state,
             [event.target.name]: event.target.value
         });
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
+    const _handleSubmit = (event, transactionType) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
-            setValidated(true);
+            setShowFeedback(true);
             toast.error("Fix the validations!");
             return
         }
-        setValidated(true);
+        handleSubmit(event, transactionType, state);
+        _clearPage();
     };
 
     return (
@@ -55,27 +75,61 @@ const ExpenseTracker = () => {
             <h4>Add Your expense</h4>
             <p>The expense provided here will be added to your overall expense for this month.</p>
             <div className={styles.expenseForm}>
-                <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                <Form noValidate validated={showFeedback} onSubmit={(event)=> {_handleSubmit(event, transactionType)}}>
                     <Col md={6} lg={5}>
                         <FormGroupWrapper
                         name="expenseName"
                         label="Expense name"
+                        value={state.expenseName}
                         placeholder="Enter the name for your expense"
                         type="text"
                         controlId="expenseName"
                         feedback="Looks good"
-                        onChange={handleChange}
+                        onChange={_handleChange}
                         />
                     </Col>
                     <Col md={6} lg={5}>
                         <FormGroupWrapper
                         name="expenseAmount"
                         label="Expense amount"
+                        value={state.expenseAmount}
                         placeholder="Enter the amount for your expense"
                         type="number"
                         controlId="expenseAmount"
                         feedback="Looks good"
-                        onChange={handleChange}
+                        onChange={_handleChange}
+                        />
+                    </Col>
+                    <Col md={6} lg={5}>
+                        <FormSelectWrapper
+                        name="expenseType"
+                        label="Expense type"
+                        options={Object.keys(expenseEnum)}
+                        onChange={_handleChange}
+                        />
+                    </Col>
+                    <Col md={6} lg={5}>
+                        <FormGroupWrapper
+                        name="expenseDesc"
+                        label="Expense description"
+                        value={state.expenseDesc}
+                        placeholder="Enter the description for your expense"
+                        type="text"
+                        controlId="expenseDesc"
+                        feedback="Looks good"
+                        onChange={_handleChange}
+                        />
+                    </Col>
+                    <Col md={6} lg={5}>
+                        <FormGroupWrapper
+                        name="expenseDate"
+                        label="Expense date"
+                        value={state.expenseDate}
+                        placeholder="Enter the date for your expense"
+                        type="date"
+                        controlId="expenseDate"
+                        feedback="Looks good"
+                        onChange={_handleChange}
                         />
                     </Col>
                     <Button variant="primary" type="submit">Submit</Button>
