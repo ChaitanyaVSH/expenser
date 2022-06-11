@@ -15,8 +15,8 @@ import BarGraph from '../Commons/Dashboards/BarGraph/BarGraph';
  */
 const Profile = () => {
     
-    const state = useSelector((state) => state.transactions)
-    console.log("state", state);
+    const state = useSelector((state) => state)
+    console.log("state in profile", state);
 
     return (
         <div className={styles.container}>

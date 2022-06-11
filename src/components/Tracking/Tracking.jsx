@@ -22,6 +22,7 @@ const Tracking = () => {
 
     // Hooks
     const dispatch = useDispatch();
+
     /**
      * Submit handler to update the state and the validations
      * @param {0} event, input field on which the event has occurred.
