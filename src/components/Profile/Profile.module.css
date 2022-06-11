@@ -4,3 +4,10 @@
     margin-top: 15px;
     padding: 8px;
 }
+
+.transactionsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}

@@ -26,6 +26,7 @@ const IncomeTracker = ({
         incomeName: "",
         incomeAmount: 0,
         incomeType: null,
+        incomeDesc: "",
         incomeDate: ""
     });
 
@@ -40,6 +41,7 @@ const IncomeTracker = ({
             incomeName: "",
             incomeAmount: 0,
             incomeType: null,
+            incomeDesc: "",
             incomeDate: ""
         });
     }
@@ -103,6 +105,18 @@ const IncomeTracker = ({
                         name="incomeType"
                         label="Income type"
                         options={Object.keys(incomeEnum)}
+                        onChange={_handleChange}
+                        />
+                    </Col>
+                    <Col md={6} lg={5}>
+                        <FormGroupWrapper
+                        name="incomeDesc"
+                        label="Income description"
+                        value={state.incomeDesc}
+                        placeholder="Enter the description for your income"
+                        type="text"
+                        controlId="incomeDesc"
+                        feedback="Looks good"
                         onChange={_handleChange}
                         />
                     </Col>

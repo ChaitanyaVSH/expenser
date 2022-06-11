@@ -36,6 +36,7 @@ const Tracking = () => {
                 title: transaction.incomeName,
                 amount: parseInt(transaction.incomeAmount),
                 type: transaction.incomeType,
+                desc: transaction.incomeDesc,
                 date: transaction.incomeDate
             }));
             toast.success("Hurray! Added the income.");
@@ -46,6 +47,7 @@ const Tracking = () => {
                 title: transaction.expenseName,
                 amount: parseInt(transaction.expenseAmount),
                 type: transaction.expenseType,
+                desc: transaction.expenseDesc,
                 date: transaction.expenseDate
             }));
             toast.success("Expenses are hard, make them wisely.");

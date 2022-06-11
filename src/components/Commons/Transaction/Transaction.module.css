@@ -1,0 +1,39 @@
+.tContainer {
+    border: 1px solid lightgray;
+    margin: 1rem 2rem;
+    padding: 0.5rem 0.8rem;
+    width: 370px;
+    box-shadow: 4px 5px 30px -6px rgba(119,119,119,0.79);
+}
+
+.tDetails {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tDetails h2 {
+    font-weight: 100;
+}
+
+.tDetails h4 {
+    color: #51cf66;
+    font-size: 2.5rem;
+    word-break: break-all;
+}
+
+.tContainer p {
+    font-weight: lighter;
+}
+
+.tContainer:hover .tDetails h4 {
+    transform: scale(1.1);
+    transition: all 250ms ease;
+}
+
+@media(max-width: 450px) {
+    .tContainer {
+        margin: 1rem 0.2rem;
+        padding: 0.1rem 0.2rem;
+    }
+}
