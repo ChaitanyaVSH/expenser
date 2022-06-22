@@ -12,7 +12,7 @@ import { toast } from 'react-toastify';
 // Custom UI Components
 import IncomeTracker from './IncomeTracker/IncomeTracker';
 import ExpenseTracker from './ExpenseTracker/ExpenseTracker';
-import transactionTypes from './TrackingConstants';
+import transactionCategories from './TrackingConstants';
 
 /**
  * This component helps the user to add an income or expense.
@@ -28,27 +28,29 @@ const Tracking = () => {
      * @param {0} event, input field on which the event has occurred.
      * @returns none
      */
-     const handleSubmit = (event, transactionType, transaction) => {
+     const handleSubmit = (event, transactionCategory, transaction) => {
         event.preventDefault();
 
-        if (transactionType === transactionTypes.INCOME) {
+        if (transactionCategory === transactionCategories.INCOME) {
             dispatch(makeTransaction(MAKE_INCOME, {
                 title: transaction.incomeName,
                 amount: parseInt(transaction.incomeAmount),
                 type: transaction.incomeType,
                 desc: transaction.incomeDesc,
-                date: transaction.incomeDate
+                date: transaction.incomeDate,
+                category: transactionCategories.INCOME
             }));
             toast.success("Hurray! Added the income.");
         }
 
-        if (transactionType === transactionTypes.EXPENSE) {
+        if (transactionCategory === transactionCategories.EXPENSE) {
             dispatch(makeTransaction(MAKE_EXPENSE, {
                 title: transaction.expenseName,
                 amount: parseInt(transaction.expenseAmount),
                 type: transaction.expenseType,
                 desc: transaction.expenseDesc,
-                date: transaction.expenseDate
+                date: transaction.expenseDate,
+                category: transactionCategories.EXPENSE
             }));
             toast.success("Expenses are hard, make them wisely.");
         }
@@ -57,11 +59,11 @@ const Tracking = () => {
     return (
         <div className={styles.container}>
             <IncomeTracker
-                transactionType={transactionTypes.INCOME}
+                transactionCategory={transactionCategories.INCOME}
                 handleSubmit={handleSubmit}
             />
             <ExpenseTracker
-                transactionType={transactionTypes.EXPENSE}
+                transactionCategory={transactionCategories.EXPENSE}
                 handleSubmit={handleSubmit}
             />
         </div>

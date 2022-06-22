@@ -1,6 +1,6 @@
-const transactionTypes = {
+const transactionCategories = {
     INCOME: "INCOME",
     EXPENSE: "EXPENSE"
 };
 
-export default transactionTypes;
+export default transactionCategories;

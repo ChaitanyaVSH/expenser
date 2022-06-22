@@ -31,6 +31,12 @@
     transition: all 250ms ease;
 }
 
+.tButtons {
+    display: flex;
+    margin-left: auto;
+    width: fit-content;
+}
+
 @media(max-width: 450px) {
     .tContainer {
         margin: 1rem 0.2rem;

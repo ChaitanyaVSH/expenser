@@ -17,7 +17,7 @@ import incomeEnum from './incomeTypes';
  * @returns JSX
  */
 const IncomeTracker = ({
-    transactionType,
+    transactionCategory,
     handleSubmit
 }) => {
 
@@ -57,7 +57,7 @@ const IncomeTracker = ({
         });
     }
 
-    const _handleSubmit = (event, transactionType) => {
+    const _handleSubmit = (event, transactionCategory) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();
@@ -66,7 +66,7 @@ const IncomeTracker = ({
             toast.error("Fix the validations!");
             return
         }
-        handleSubmit(event, transactionType, state);
+        handleSubmit(event, transactionCategory, state);
         _clearPage();
     }
 
@@ -75,7 +75,7 @@ const IncomeTracker = ({
             <h4>Add Your income</h4>
             <p>The income provided here will be added to your overall income for this month.</p>
             <div className={styles.incomeForm}>
-                <Form noValidate validated={showFeedback} onSubmit={(event)=> {_handleSubmit(event, transactionType)}}>
+                <Form noValidate validated={showFeedback} onSubmit={(event)=> {_handleSubmit(event, transactionCategory)}}>
                     <Col md={6} lg={5}>
                         <FormGroupWrapper
                         name="incomeName"

@@ -17,7 +17,7 @@ import expenseEnum from "./expenseTypes";
  * @returns JSX
  */
 const ExpenseTracker = ({
-    transactionType,
+    transactionCategory,
     handleSubmit
 }) => {
 
@@ -57,7 +57,7 @@ const ExpenseTracker = ({
         });
     }
 
-    const _handleSubmit = (event, transactionType) => {
+    const _handleSubmit = (event, transactionCategory) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();
@@ -66,7 +66,7 @@ const ExpenseTracker = ({
             toast.error("Fix the validations!");
             return
         }
-        handleSubmit(event, transactionType, state);
+        handleSubmit(event, transactionCategory, state);
         _clearPage();
     };
 
@@ -75,7 +75,7 @@ const ExpenseTracker = ({
             <h4>Add Your expense</h4>
             <p>The expense provided here will be added to your overall expense for this month.</p>
             <div className={styles.expenseForm}>
-                <Form noValidate validated={showFeedback} onSubmit={(event)=> {_handleSubmit(event, transactionType)}}>
+                <Form noValidate validated={showFeedback} onSubmit={(event)=> {_handleSubmit(event, transactionCategory)}}>
                     <Col md={6} lg={5}>
                         <FormGroupWrapper
                         name="expenseName"

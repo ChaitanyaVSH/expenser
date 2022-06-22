@@ -15,33 +15,36 @@ import Transaction from '../Commons/Transaction/Transaction';
  */
 const Profile = () => {
     
-    const state = useSelector((state) => state)
-    console.log("state in profile", state);
+    const state = useSelector((state) => state);
 
     const _getIncomes = () => {
-        const incomes = state.transactions.incomes
+        const incomes = [...state.transactions.incomes]
         return incomes.map((i, idx) => {
             return <Transaction
+                        key={idx}
                         tName={i.title}
                         tAmount={i.amount}
                         tType={i.type}
                         tDesc={i.desc}
                         tDate={i.date}
-                        key={idx}
+                        tCategory={i.category}
+                        tId={idx}
                     />
         })
     }
 
     const _getExpenses = () => {
-        const expenses = state.transactions.expenses
+        const expenses = [...state.transactions.expenses]
         return expenses.map((e, idx) => {
             return <Transaction
+                        key={idx}
                         tName={e.title}
                         tAmount={e.amount}
                         tType={e.type}
                         tDesc={e.desc}
                         tDate={e.date}
-                        key={idx}
+                        tCategory={e.category}
+                        tId={idx}
                     />
         })
     }
