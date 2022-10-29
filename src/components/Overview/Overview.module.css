@@ -1,0 +1,18 @@
+.container {
+    margin: 0 auto;
+    padding: 4px;
+    max-width: 600px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.container > h4,
+.flex > h4 {
+    font-size: clamp(0.9rem, 5.5vw, 1.5rem);
+    color: #777;
+}

@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import Tab from "react-bootstrap/Tab";
 import Tabs from 'react-bootstrap/Tabs';
 import Transaction from '../Commons/Transaction/Transaction';
+import Overview from '../Overview/Overview';
 
 /**
  * This component helps the user to track the entire incomes and expenses through dashboard.
@@ -65,6 +66,11 @@ const Profile = () => {
                     <div className={styles.transactionsContainer}>
                         {_getExpenses() || <h4>None here</h4>}
                     </div>
+                </Tab>
+                <Tab eventKey="overview" title="Overview">
+                    <br />
+                    <h1>Your summary</h1>
+                    <Overview />
                 </Tab>
             </Tabs>
         </div>
