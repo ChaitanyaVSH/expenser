@@ -9,6 +9,7 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from 'react-bootstrap/Tabs';
 import Transaction from '../Commons/Transaction/Transaction';
 import Overview from '../Overview/Overview';
+import FiltersPanel from '../Commons/FiltersPanel/FiltersPanel';
 
 /**
  * This component helps the user to track the entire incomes and expenses through dashboard.
@@ -55,6 +56,7 @@ const Profile = () => {
             <Tabs id="controlled-tab-example" fill justify transition={true}>
                 <Tab eventKey="incomes" title="Incomes">
                     <br />
+                    <FiltersPanel />
                     <h1>Your Incomes</h1>
                     <div className={styles.transactionsContainer}>
                         {_getIncomes() || <h4>None here</h4>}
