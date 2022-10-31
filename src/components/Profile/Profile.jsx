@@ -56,7 +56,15 @@ const Profile = () => {
             <Tabs id="controlled-tab-example" fill justify transition={true}>
                 <Tab eventKey="incomes" title="Incomes">
                     <br />
-                    <FiltersPanel />
+                    <FiltersPanel filters={[
+                        {
+                            filterName: "f1",
+                            filterType: "date"
+                        },
+                        {
+                            filterName: "f2",
+                            filterType: "select"
+                        }]}/>
                     <h1>Your Incomes</h1>
                     <div className={styles.transactionsContainer}>
                         {_getIncomes() || <h4>None here</h4>}
