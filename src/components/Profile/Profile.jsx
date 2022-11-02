@@ -99,7 +99,7 @@ const Profile = () => {
                 </Tab>
                 <Tab eventKey="overview" title="Overview">
                     <br />
-                    <h1>Your summary</h1>
+                    <h1>Your Summary</h1>
                     <Overview />
                 </Tab>
             </Tabs>
