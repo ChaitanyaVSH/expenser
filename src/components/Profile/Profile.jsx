@@ -10,6 +10,7 @@ import Tabs from 'react-bootstrap/Tabs';
 import Transaction from '../Commons/Transaction/Transaction';
 import Overview from '../Overview/Overview';
 import FiltersPanel from '../Commons/FiltersPanel/FiltersPanel';
+import transactionCategories from '../Tracking/TrackingConstants';
 
 /**
  * This component helps the user to track the entire incomes and expenses through dashboard.
@@ -58,13 +59,18 @@ const Profile = () => {
                     <br />
                     <FiltersPanel filters={[
                         {
-                            filterName: "f1",
+                            filterName: "incomeDate",
+                            filterLabel: "Date",
+                            filterCategory: transactionCategories.INCOME,
                             filterType: "date"
                         },
                         {
-                            filterName: "f2",
+                            filterName: "incomeType",
+                            filterLabel: "Type",
+                            filterCategory: transactionCategories.INCOME,
                             filterType: "select"
-                        }]}/>
+                        },
+                        ]}/>
                     <h1>Your Incomes</h1>
                     <div className={styles.transactionsContainer}>
                         {_getIncomes() || <h4>None here</h4>}
@@ -72,6 +78,20 @@ const Profile = () => {
                 </Tab>
                 <Tab eventKey="expenses" title="Expenses">
                     <br />
+                    <FiltersPanel filters={[
+                        {
+                            filterName: "expenseDate",
+                            filterLabel: "Date",
+                            filterCategory: transactionCategories.EXPENSE,
+                            filterType: "date"
+                        },
+                        {
+                            filterName: "expenseType",
+                            filterLabel: "Type",
+                            filterCategory: transactionCategories.EXPENSE,
+                            filterType: "select"
+                        },
+                        ]}/>
                     <h1>Your Expenses</h1>
                     <div className={styles.transactionsContainer}>
                         {_getExpenses() || <h4>None here</h4>}

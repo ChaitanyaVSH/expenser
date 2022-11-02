@@ -35,7 +35,7 @@ const FormSelectWrapper = (props) => {
 
         return (
             <div>
-                <Form.Label>{props.label}</Form.Label>
+                {props.label ? <Form.Label>{props.label}</Form.Label> : null}
                 <Form.Select
                     name={props.name}
                     className="mb-3"

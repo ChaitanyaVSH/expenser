@@ -21,6 +21,7 @@ const FiltersPanel = (props) => {
                 return <FormGroupWrapper
                 name={filter.filterName}
                 type={filter.filterType}
+                label={filter.filterLabel}
                 controlId="incomeName"
                 feedback="Looks good"
                 onChange={() => handleClick(filter.filterType)}
@@ -31,6 +32,7 @@ const FiltersPanel = (props) => {
                 return  <FormSelectWrapper
                 options={["Salary", "Capital Gains"]}
                 onChange={handleClick}
+                label={filter.filterLabel}
                 />
             }
             return null;
@@ -39,7 +41,6 @@ const FiltersPanel = (props) => {
 
     return (
         <div className={styles.container} onClick={handleClick}>
-            <p>Filters: </p>
             {renderJsx()}
         </div>
     )

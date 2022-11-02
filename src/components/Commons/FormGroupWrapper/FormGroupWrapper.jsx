@@ -17,7 +17,7 @@ const FormGroupWrapper = (props) => {
 
     return (
         <Form.Group className="mb-3" controlId={props.controlId}>
-            <Form.Label>{props.label}</Form.Label>
+            {props.label ? <Form.Label>{props.label}</Form.Label> : null}
             {
             props.type ?
                 <Form.Control
