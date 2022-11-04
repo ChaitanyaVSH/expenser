@@ -8,6 +8,9 @@ import { updateTransactions } from '../../../redux/actions/transactions/actions'
 import { useDispatch, useSelector } from "react-redux";
 import { UPDATE_TRANSACTIONS } from "../../../redux/actions/types";
 
+// Router
+import { useHistory } from "react-router-dom";
+
 // UI Components
 import Button from "react-bootstrap/Button";
 
@@ -22,6 +25,7 @@ const Transaction = ({
 } ) => {
 
   const dispatch = useDispatch();
+  const history = useHistory();
   const state = useSelector((state) => state);
 
   const handleDelete = (index, tCategory) => {
@@ -51,7 +55,13 @@ const Transaction = ({
 
       return;
 
-}
+  }
+
+  const handleUpdate = (tId, tCategory) => {
+    const editUrl = `/track/?edit=true&category=${tCategory.toLowerCase()}&id=${tId}`
+    history.push(editUrl)
+  }
+
 
   return (
     <div className={styles.tContainer}>
@@ -63,7 +73,7 @@ const Transaction = ({
         <p><strong>Date:</strong> {tDate}</p>
         <div className={styles.tButtons}>
           <Button variant="warning" type="submit" onClick={() => handleDelete(tId, tCategory)}>Delete</Button>
-          <Button variant="secondary" type="submit">Update</Button>
+          <Button variant="secondary" type="submit" onClick={() => handleUpdate(tId, tCategory)}>Update</Button>
         </div>
     </div>
   )
