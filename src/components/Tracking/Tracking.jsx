@@ -1,4 +1,5 @@
 import React from 'react';
+import queryString from 'query-string'
 import styles from "./Tracking.module.css";
 
 // Redux
@@ -18,7 +19,13 @@ import transactionCategories from './TrackingConstants';
  * This component helps the user to add an income or expense.
  * @returns JSX
  */
-const Tracking = () => {
+const Tracking = (props) => {
+
+    const params =queryString.parse(props.location.search, { ignoreQueryPrefix: true });
+
+    const category = params?.category?.toUpperCase();
+    const edit = params?.edit && params?.edit === 'true';
+    const id = params?.id;
 
     // Hooks
     const dispatch = useDispatch();
@@ -56,8 +63,25 @@ const Tracking = () => {
         }
     };
 
-    return (
-        <div className={styles.container}>
+    const renderJSX = () => {
+        if(edit) {
+            if (category === transactionCategories.INCOME) {
+                return <IncomeTracker
+                transactionCategory={transactionCategories.INCOME}
+                handleSubmit={handleSubmit}
+                id={id}
+                />
+            }
+            else if (category === transactionCategories.EXPENSE) {
+                return <ExpenseTracker
+                transactionCategory={transactionCategories.EXPENSE}
+                handleSubmit={handleSubmit}
+                id={id}
+            />
+            }
+        }
+
+        return  <>
             <IncomeTracker
                 transactionCategory={transactionCategories.INCOME}
                 handleSubmit={handleSubmit}
@@ -66,6 +90,12 @@ const Tracking = () => {
                 transactionCategory={transactionCategories.EXPENSE}
                 handleSubmit={handleSubmit}
             />
+            </>
+    }
+
+    return (
+        <div className={styles.container}>
+            {renderJSX()}
         </div>
     )
 }

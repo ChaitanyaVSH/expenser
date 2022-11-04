@@ -18,8 +18,11 @@ import incomeEnum from './incomeTypes';
  */
 const IncomeTracker = ({
     transactionCategory,
-    handleSubmit
+    handleSubmit,
+    id
 }) => {
+    
+    console.log("id bhai", id)
 
     // State to store the currently added values
     const [state, setState] = useState({
