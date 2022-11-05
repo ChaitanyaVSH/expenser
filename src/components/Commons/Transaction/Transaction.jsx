@@ -18,6 +18,7 @@ const Transaction = ({
   tName,
   tAmount,
   tType,
+  tPerson,
   tDesc,
   tDate,
   tCategory,
@@ -71,6 +72,7 @@ const Transaction = ({
         </div>
         <p><strong>Description:</strong> {tDesc}</p>
         <p><strong>Date:</strong> {tDate}</p>
+        <p><strong>Person:</strong> {tPerson}</p>
         <div className={styles.tButtons}>
           <Button variant="warning" type="submit" onClick={() => handleDelete(tId, tCategory)}>Delete</Button>
           <Button variant="secondary" type="submit" onClick={() => handleUpdate(tId, tCategory)}>Update</Button>

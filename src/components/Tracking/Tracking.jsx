@@ -43,6 +43,7 @@ const Tracking = (props) => {
                 title: transaction.incomeName,
                 amount: parseInt(transaction.incomeAmount),
                 type: transaction.incomeType,
+                person: transaction.incomePerson,
                 desc: transaction.incomeDesc,
                 date: transaction.incomeDate,
                 category: transactionCategories.INCOME
@@ -55,6 +56,7 @@ const Tracking = (props) => {
                 title: transaction.expenseName,
                 amount: parseInt(transaction.expenseAmount),
                 type: transaction.expenseType,
+                person: transaction.expensePerson,
                 desc: transaction.expenseDesc,
                 date: transaction.expenseDate,
                 category: transactionCategories.EXPENSE

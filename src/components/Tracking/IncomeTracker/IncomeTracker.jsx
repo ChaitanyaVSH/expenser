@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 import FormGroupWrapper from "../../Commons/FormGroupWrapper";
 import FormSelectWrapper from '../../Commons/FormSelectWrapper';
 import incomeEnum from './incomeTypes';
+import { transactionPersons } from '../TrackingConstants';
 
 /**
  * This component helps the user to add an Income.
@@ -29,6 +30,7 @@ const IncomeTracker = ({
         incomeName: "",
         incomeAmount: 0,
         incomeType: null,
+        incomePerson: "",
         incomeDesc: "",
         incomeDate: ""
     });
@@ -44,6 +46,7 @@ const IncomeTracker = ({
             incomeName: "",
             incomeAmount: 0,
             incomeType: null,
+            incomePerson: "",
             incomeDesc: "",
             incomeDate: ""
         });
@@ -108,6 +111,14 @@ const IncomeTracker = ({
                         name="incomeType"
                         label="Income type"
                         options={Object.keys(incomeEnum)}
+                        onChange={_handleChange}
+                        />
+                    </Col>
+                    <Col md={6} lg={5}>
+                        <FormSelectWrapper
+                        name="incomePerson"
+                        label="Income by"
+                        options={Object.keys(transactionPersons)}
                         onChange={_handleChange}
                         />
                     </Col>

@@ -28,6 +28,7 @@ const Profile = () => {
                         tName={i.title}
                         tAmount={i.amount}
                         tType={i.type}
+                        tPerson={i.person}
                         tDesc={i.desc}
                         tDate={i.date}
                         tCategory={i.category}
@@ -44,6 +45,7 @@ const Profile = () => {
                         tName={e.title}
                         tAmount={e.amount}
                         tType={e.type}
+                        tPerson={e.person}
                         tDesc={e.desc}
                         tDate={e.date}
                         tCategory={e.category}

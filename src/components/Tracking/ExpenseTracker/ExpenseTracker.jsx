@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 import FormGroupWrapper from "../../Commons/FormGroupWrapper";
 import FormSelectWrapper from '../../Commons/FormSelectWrapper';
 import expenseEnum from "./expenseTypes";
+import { transactionPersons } from '../TrackingConstants';
 
 /**
  * This component helps the user to add an Expense.
@@ -26,6 +27,7 @@ const ExpenseTracker = ({
         expenseName: "",
         expenseAmount: 0,
         expenseType: null,
+        expensePerson: "",
         expenseDesc: "",
         expenseDate: ""
     });
@@ -41,6 +43,7 @@ const ExpenseTracker = ({
             expenseName: "",
             expenseAmount: 0,
             expenseType: null,
+            expensePerson: "",
             expenseDesc: "",
             expenseDate: ""
         });
@@ -105,6 +108,14 @@ const ExpenseTracker = ({
                         name="expenseType"
                         label="Expense type"
                         options={Object.keys(expenseEnum)}
+                        onChange={_handleChange}
+                        />
+                    </Col>
+                    <Col md={6} lg={5}>
+                        <FormSelectWrapper
+                        name="expensePerson"
+                        label="Expense by"
+                        options={Object.keys(transactionPersons)}
                         onChange={_handleChange}
                         />
                     </Col>
