@@ -66,13 +66,15 @@ const Transaction = ({
 
   return (
     <div className={styles.tContainer}>
+        <h2>{tName}</h2>
         <div className={styles.tDetails}>
-            <h2>{tName}</h2>
-            <h4>{tAmount}</h4>
+          <p>{tDate}</p>
+          <h4>{tAmount}</h4>
         </div>
         <p><strong>Description:</strong> {tDesc}</p>
         <p><strong>Date:</strong> {tDate}</p>
         <p><strong>Person:</strong> {tPerson}</p>
+        <p><strong>Category:</strong> {tType}</p>
         <div className={styles.tButtons}>
           <Button variant="warning" type="submit" onClick={() => handleDelete(tId, tCategory)}>Delete</Button>
           <Button variant="secondary" type="submit" onClick={() => handleUpdate(tId, tCategory)}>Update</Button>

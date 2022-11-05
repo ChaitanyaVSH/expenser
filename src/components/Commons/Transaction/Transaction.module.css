@@ -1,15 +1,28 @@
 .tContainer {
     border: 1px solid lightgray;
-    margin: 1rem 2rem;
+    margin: 8px;
     padding: 0.5rem 0.8rem;
-    width: 370px;
-    box-shadow: 4px 5px 30px -6px rgba(119,119,119,0.79);
+    width: 400px;
+    /* min-height: 320px; */
+    /* box-shadow: 10px 10px 66px -30px rgba(0,0,0,0.75); */
+    display: flex;
+    flex-direction: column;
+}
+
+.tContainer h2, .tDetails h4 {
+    margin: 0;
+    padding: 0;
 }
 
 .tDetails {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.tContainer h2 {
+    margin-bottom: 4px;
 }
 
 .tDetails h2 {
@@ -19,15 +32,13 @@
 .tDetails h4 {
     color: #51cf66;
     word-break: break-all;
+    font-weight: 500;
 }
 
 .tContainer p {
     font-weight: lighter;
-}
-
-.tContainer:hover .tDetails h4 {
-    transform: scale(1.1);
-    transition: all 250ms ease;
+    margin: 0;
+    padding: 0;
 }
 
 .tButtons {
@@ -39,6 +50,6 @@
 @media(max-width: 450px) {
     .tContainer {
         margin: 1rem 0.2rem;
-        padding: 0.1rem 0.2rem;
+        padding: 0.2rem 0.4rem;
     }
 }
