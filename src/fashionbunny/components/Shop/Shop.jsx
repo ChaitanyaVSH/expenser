@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./Shop.module.css";
+// import styles from "./Shop.module.css";
 
 // Composite Components
 import NewArrivals from '../NewArrivals/NewArrivals';

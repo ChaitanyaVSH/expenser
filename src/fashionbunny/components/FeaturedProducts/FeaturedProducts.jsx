@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./FeaturedProducts.module.css";
+// import styles from "./FeaturedProducts.module.css";
 
 // Components
 import ItemCard from '../commons/ItemCard/ItemCard';

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./ItemCard.module.css";
+// import styles from "./ItemCard.module.css";
 
 // Bootstrap
 import Button from 'react-bootstrap/Button';

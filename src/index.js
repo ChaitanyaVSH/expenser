@@ -21,7 +21,7 @@ import routes from './routes';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // Components
-import NavBar from './components/Navbar/NavBar';
+// import NavBar from './components/Navbar/NavBar';
 
 ReactDOM.render(
   <Router>
