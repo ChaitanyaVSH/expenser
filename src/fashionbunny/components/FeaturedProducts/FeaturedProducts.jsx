@@ -1,9 +1,20 @@
 import React from 'react';
 import styles from "./FeaturedProducts.module.css";
 
+// Components
+import ItemCard from '../commons/ItemCard/ItemCard';
+
+// Data
+import { items } from '../../mockdata/items';
+
 const FeaturedProducts = () => {
   return (
-    <div>FeaturedProducts</div>
+    <>
+    <h1>Featured Products</h1>
+    {
+        items.slice(0, 5).map((item, idx) => <ItemCard {...item} key={idx}/>)
+    }
+    </>
   )
 }
 

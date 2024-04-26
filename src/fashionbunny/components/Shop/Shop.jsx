@@ -1,40 +1,22 @@
 import React from 'react';
 import styles from "./Shop.module.css";
 
-// Components
-import ItemCard from '../commons/ItemCard/ItemCard';
-
-// Data
-import { items } from '../../mockdata/items';
+// Composite Components
+import NewArrivals from '../NewArrivals/NewArrivals';
+import FeaturedProducts from '../FeaturedProducts/FeaturedProducts';
 
 const Shop = () => {
   return (
     <div style={{
-        textAlign: "center"
+        width: "86%",
+        margin: "0 auto",
     }}>
-        <h1>New arrivals</h1>
-        <hr />
-        {
-            items.map((item, idx) => <ItemCard {...item} key={idx}/>)
-        }
+        <NewArrivals />
         <br />
         <br />
         <br />
         <br />
-        <h1>Featured products</h1>
-        <hr />
-        {
-            items.slice(0, 3).map((item, idx) => <ItemCard {...item} key={idx}/>)
-        }
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1>New arrivals</h1>
-        <hr />
-        {
-            items.map((item, idx) => <ItemCard {...item} key={idx}/>)
-        }
+        <FeaturedProducts />
     </div>
   )
 }
