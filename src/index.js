@@ -25,9 +25,11 @@ import NavBar from './components/Navbar/NavBar';
 
 ReactDOM.render(
   <Router>
+    <div className='container'>
     <Provider store={store}>
       <React.StrictMode>
-        <NavBar/>
+        {/* Disabling expenser navbar as we will add SAH navbar */}
+        {/* <NavBar/> */}
         <ToastContainer
           position="top-right"
           autoClose={7000}
@@ -37,10 +39,11 @@ ReactDOM.render(
           pauseOnFocusLoss
           draggable
           pauseOnHover
-        />
+          />
         {routes}
       </React.StrictMode>
     </Provider>
+    </div>
   </Router>,
   document.getElementById('root')
 );
