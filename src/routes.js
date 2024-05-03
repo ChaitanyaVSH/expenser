@@ -7,6 +7,7 @@ import Tracking from "./components/Tracking/Tracking";
 
 // FashionBunny components
 import Shop from "./fashionbunny/components/Shop";
+import TryAtHome from "./fashionbunny/components/TryAtHome/TryAtHome";
 
 // Variable
 const routes = (
@@ -15,6 +16,7 @@ const routes = (
         <Route exact path="/track" component={Tracking}/>
         <Route exact path="/user" component={Profile}/>
         <Route exact path="/shop" component={Shop}/>
+        <Route exact path="/try-at-home" component={TryAtHome}/>
         <Route exact path="/" component={App}/>
         <Route path="*" component={NotFound} />
     </Switch>
