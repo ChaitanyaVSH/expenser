@@ -1,6 +1,6 @@
 import {
     ADD_ITEM_TO_CART,
-    // REMOVE_ITEM_FROM_CART,
+    REMOVE_ITEM_FROM_CART,
     // INCREASE_QUANTITY_IN_CART,
     // DECREASE_QUANTITY_IN_CART,
     // TRY_AT_HOME_CART,
@@ -36,11 +36,17 @@ const addItemToCart = (state, action) => {
     };
 };
 
+const removeItemFromCart = (state, action) => {
+    console.log("Removing item from the cart: reducer");
+}
+
 const fashionBunnyReducer = (state = defaultState, action) => {
     // console.log("action", action);
     switch (action.type) {
         case ADD_ITEM_TO_CART:
             return addItemToCart(state, action);
+        case REMOVE_ITEM_FROM_CART:
+            return removeItemFromCart(state, action);
         default:
             return state;
     }
